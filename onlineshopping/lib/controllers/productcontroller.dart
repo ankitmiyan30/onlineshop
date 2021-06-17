@@ -1,11 +1,10 @@
 import 'package:get/state_manager.dart';
-import 'package:onlineshopping/models/product.dart';
 import 'package:onlineshopping/services/remote_services.dart';
 
 class ProductController extends GetxController {
   var isLoading = false.obs;
-  var productList = List<Product>().obs;
-  var favProductsList = List<Product>().obs;
+  var productList = [].obs;
+  var favProductsList = [].obs;
   @override
   void onInit() {
     fetchProducts();
