@@ -1,0 +1,6 @@
+{
+
+    "secretKey" : "dev secrate key here",
+    "devURL" : "https://makeup-api.herokuapp.com/api/v1/products.json",
+    "prodURL": "https://makeup-api.herokuapp.com/api/v1/products.json"
+}

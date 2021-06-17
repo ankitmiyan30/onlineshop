@@ -1,0 +1,27 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        // {
+        //     "type": "pwa-chrome",
+        //     "request": "launch",
+        //     "name": "Launch Chrome",
+        //     // "url": "http://localhost:8080",
+        //     "file": "${workspaceFolder}/index.html"
+        // },
+        {
+            "type": "dart",
+            "request": "launch",
+            "name": "Dev App",
+            "program": "lib/build_variants/main_dev.dart",
+        },
+        {
+            "type": "dart",
+            "request": "launch",
+            "name": "Prod App",
+            "program": "lib/build_variants/main_prod.dart",
+        }
+    ]
+}
