@@ -76,7 +76,7 @@ flutter:
   fonts:
     - family: After_Shok
       fonts:
-        - asset: fonts/After_Shok.ttf
+        - asset: assets/fonts/After_Shok.ttf
           style: italic
    
   #

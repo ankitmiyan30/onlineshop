@@ -1,7 +1,10 @@
 import 'package:get/state_manager.dart';
+import 'package:onlineshopping/controllers/errorhandlercontroller.dart';
+import 'package:onlineshopping/models/product.dart';
 import 'package:onlineshopping/services/remote_services.dart';
 
-class ProductController extends GetxController {
+class ProductController extends GetxController with ErrorHandler {
+  RemoteServices remoteServices = new RemoteServices();
   var isLoading = false.obs;
   var productList = [].obs;
   var favProductsList = [].obs;
@@ -14,10 +17,14 @@ class ProductController extends GetxController {
   void fetchProducts() async {
     try {
       isLoading(true);
-      var products = await RemoteServices.fetchProducts();
-      if (products != null) {
+      var response = await remoteServices.getRequest().catchError(handleError);
+      if (response != null) {
+        var products = productFromJson(response);
         productList.value = products;
         sortAsPopularity();
+      } else {
+        isLoading(false);
+        return;
       }
     } finally {
       isLoading(false);
