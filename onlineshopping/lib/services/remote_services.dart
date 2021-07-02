@@ -8,7 +8,7 @@ import 'package:onlineshopping/services/api_exception.dart';
 
 class RemoteServices {
   static var client = http.Client();
-  static const TIME_OUT_DURATION = Duration(seconds: 1);
+  static const TIME_OUT_DURATION = Duration(seconds: 30);
   Future<dynamic> getRequest() async {
     try {
       var response = await client
