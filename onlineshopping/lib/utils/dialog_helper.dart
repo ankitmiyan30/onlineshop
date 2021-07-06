@@ -35,4 +35,26 @@ class DialogHelper {
       ),
     ));
   }
+
+  static void showLoadingDialog([String message]) {
+    Get.dialog(
+      Dialog(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CircularProgressIndicator(),
+            // message != null && message != ""
+            //     ? Text(message)
+            //     : Text("Loading..."),
+          ],
+        ),
+      ),
+    );
+  }
+
+  static void hideLoadingDialog() {
+    if (Get.isDialogOpen) Get.back();
+  }
 }

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:onlineshopping/controllers/base_controller/errorhandlercontroller.dart';
+import 'package:onlineshopping/models/brand.dart';
 import 'package:responsive_flutter/responsive_flutter.dart';
 import 'package:onlineshopping/components/product_tile.dart';
 import 'package:onlineshopping/components/title_text_widget.dart';
 import 'package:onlineshopping/controllers/cartcontroller.dart';
 import 'package:onlineshopping/controllers/productcontroller.dart';
-import 'package:onlineshopping/models/brand.dart';
 import 'package:onlineshopping/models/category.dart';
 import 'package:onlineshopping/screens/cartpage.dart';
 import 'package:onlineshopping/screens/favouriteitempage.dart';
@@ -158,9 +159,9 @@ class _ProductListScreenState extends State<ProductListScreen> {
   Widget buildProductList() {
     return Expanded(
       child: Obx(() {
-        if (productController.isLoading.value)
-          return Center(child: CircularProgressIndicator());
-        else
+        // if (productController.isLoading.value)
+        //   return Center(child: CircularProgressIndicator());
+        // else
           return StaggeredGridView.countBuilder(
             crossAxisCount: 2,
             itemCount: productController.productList.length,

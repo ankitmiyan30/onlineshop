@@ -1,9 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:responsive_flutter/responsive_flutter.dart';
 import 'package:onlineshopping/models/brand.dart';
-import 'package:onlineshopping/utils/app_colors.dart';
+import 'package:responsive_flutter/responsive_flutter.dart';
 import 'package:onlineshopping/utils/shopxhelper.dart';
 
 class BrandTile extends StatelessWidget {

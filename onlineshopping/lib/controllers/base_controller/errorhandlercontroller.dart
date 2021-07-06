@@ -3,6 +3,7 @@ import 'package:onlineshopping/utils/dialog_helper.dart';
 
 class ErrorHandler {
   void handleError(error) {
+    hideLoading();
     if (error is BadRequestException) {
       DialogHelper.showErrorDialog(description: error.message ?? '');
     } else if (error is FetchDataException) {
@@ -14,5 +15,13 @@ class ErrorHandler {
       DialogHelper.showErrorDialog(
           title: "Invalid User", description: error.message ?? '');
     }
+  }
+
+  showLoading([String message]) {
+    DialogHelper.showLoadingDialog(message);
+  }
+
+  hideLoading() {
+    DialogHelper.hideLoadingDialog();
   }
 }
