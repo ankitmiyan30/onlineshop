@@ -29,7 +29,7 @@ class _FavouriteListScreenState extends State<FavouriteListScreen> {
         elevation: 0,
         title: HeadingTextWidget(
           context: context,
-          text: "Favoutire",
+          text: "Favourite",
         ),
       ),
       body: GestureDetector(

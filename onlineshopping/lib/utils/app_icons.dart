@@ -4,4 +4,5 @@ class AppIcons {
   static String dummyImage1 = '$_basePath/dummy1.jpg';
   static String dummyImage2 = '$_basePath/dummy2.jpg';
   static String dummyImage3 = '$_basePath/dummy3.jpg';
+  static String profileImage = '$_basePath/profile.png';
 }

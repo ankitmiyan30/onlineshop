@@ -9,6 +9,7 @@ import 'package:flutter_inner_drawer/inner_drawer.dart';
 // import 'package:flutter_native_admob/native_admob_controller.dart';
 import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
+import 'package:onlineshopping/screens/drawermenu.dart';
 import 'package:responsive_flutter/responsive_flutter.dart';
 import 'package:onlineshopping/components/brand_tile.dart';
 import 'package:onlineshopping/components/searchField.dart';
@@ -66,68 +67,68 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return
-        // InnerDrawer(
-        //   key: _innerDrawerKey,
-        //   onTapClose: true, // default false
-        //   swipe: true, // default true
-        //   // colorTransitionChild: Colors.red, // default Color.black54
-        //   colorTransitionScaffold: Colors.black54, // default Color.black54
+        //   InnerDrawer(
+        // key: _innerDrawerKey,
+        // onTapClose: true, // default false
+        // swipe: true, // default true
+        // // colorTransitionChild: Colors.red, // default Color.black54
+        // colorTransitionScaffold: Colors.black54, // default Color.black54
 
-        //   //When setting the vertical offset, be sure to use only top or bottom
-        //   offset: IDOffset.only(right: 0.05, left: 0.0, top: 0.0),
+        //     //When setting the vertical offset, be sure to use only top or bottom
+        // offset: IDOffset.only(right: 0.05, left: 0.0, top: 0.0),
 
-        //   scale: IDOffset.horizontal(0.8), // set the offset in both directions
+        //     scale: IDOffset.horizontal(0.8), // set the offset in both directions
 
-        //   proportionalChildArea: false, // default true
-        //   borderRadius: 10, // default 0
-        //   leftAnimationType: InnerDrawerAnimation.static, // default static
-        //   // rightAnimationType: InnerDrawerAnimation.static,
-        //   // backgroundDecoration: BoxDecoration(
-        //   //   color: Colors.white,
-        //   // ), // default  Theme.of(context).backgroundColor
+        // proportionalChildArea: false, // default true
+        // borderRadius: 10, // default 0
+        // leftAnimationType: InnerDrawerAnimation.static, // default static
+        // // rightAnimationType: InnerDrawerAnimation.static,
+        // // backgroundDecoration: BoxDecoration(
+        // //   color: Colors.white,
+        // // ), // default  Theme.of(context).backgroundColor
 
-        //   //when a pointer that is in contact with the screen and moves to the right or left
-        //   // onDragUpdate: (double val, InnerDrawerDirection direction) {
-        //   //   // return values between 1 and 0
-        //   //   print(val);
-        //   //   // check if the swipe is to the right or to the left
-        //   //   print(direction == InnerDrawerDirection.start);
-        //   // },
+        //     //when a pointer that is in contact with the screen and moves to the right or left
+        // // onDragUpdate: (double val, InnerDrawerDirection direction) {
+        // //   // return values between 1 and 0
+        // //   print(val);
+        // //   // check if the swipe is to the right or to the left
+        // //   print(direction == InnerDrawerDirection.start);
+        // // },
 
-        //   // innerDrawerCallback: (a) =>
-        //   // print(a), // return  true (open) or false (close)
-        //   leftChild: Container(
-        //       child: FlatButton(
-        //     child: Text("Click Me"),
-        //     onPressed: () {
-        //       Navigator.push(
-        //         context,
-        //         MaterialPageRoute(
-        //           builder: (context) => FavouriteListScreen(),
-        //         ),
-        //       );
-        //       _toggle();
-        //     },
-        //   )), // required if rightChild is not set
-        //   rightChild: null, // required if leftChild is not set
-        //   scaffold:
+        //     // innerDrawerCallback: (a) =>
+        // // print(a), // return  true (open) or false (close)
+
+        // leftChild: Container(
+        //     child: FlatButton(
+        //   child: Text("Inner Drawer Menu"),
+        //   onPressed: () {
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(
+        //         builder: (context) => FavouriteListScreen(),
+        //       ),
+        //     );
+        //     _toggle();
+        //   },
+        // )), // required if rightChild is not set
+        // rightChild: Container(
+        //     child: FlatButton(
+        //   child: Text("Inner Right Menu"),
+        //   onPressed: () {
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(
+        //         builder: (context) => FavouriteListScreen(),
+        //       ),
+        //     );
+        //     _toggle();
+        //   },
+        // )), // required if leftChild is not set
+        // scaffold:
         Scaffold(
       key: _scaffoldKey,
       drawer: Drawer(
-        child: Container(
-          child: FlatButton(
-            child: Text("Click Me"),
-            onPressed: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => FavouriteListScreen(),
-                ),
-              );
-            },
-          ),
-        ), //
+        child: NavigationDrawerMenu(),
       ),
       appBar: AppBar(
         elevation: 0,
@@ -289,8 +290,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      // ),
     );
-    // );
   }
 
   Widget buildSeeMore() {
